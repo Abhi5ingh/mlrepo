@@ -5,7 +5,7 @@ def get_requirements(filename:str)->list:
     with open(filename, 'r') as file:
         requirements = file.read().splitlines()
         if "-e ." in requirements:
-            requirements.remove("-e .")
+            requirements.remove("-e . ")
     return requirements
 
 setup(
