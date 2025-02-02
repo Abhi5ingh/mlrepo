@@ -7,6 +7,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from dataclasses import dataclass
+from src.components.data_transformation import DataTransformation  
+from src.components.data_transformation import DataTransformationConfig
 
 
 @dataclass
@@ -41,5 +43,7 @@ class DataIngestion:
 
 if __name__ == "__main__":
     data_ingestion = DataIngestion()
-    data_ingestion.init_data_ingestion()
+    train_data,test_data=data_ingestion.init_data_ingestion()
+    data_transformation=DataTransformation()
+    data_transformation.initiate_datatransform(train_data,test_data)
     
