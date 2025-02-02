@@ -52,4 +52,13 @@ def evaluate_model(X_train, y_train, x_test, y_test, models,param_grids):
 
     except Exception as e:
         raise CustomException(e, sys)
- 
+    
+def load_object(file_path):
+    try:
+        logging.info("Loading Object Started")
+        with open(file_path, 'rb') as file:
+            obj = pickle.load(file)
+        logging.info("Object Loaded")
+        return obj
+    except Exception as e:
+        raise CustomException(e, sys)
